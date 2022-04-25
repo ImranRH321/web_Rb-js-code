@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="sass/main.css">
+    <script defer>
+        var x = document.getElementById('loca')
+      function myFunc(){
+          
+          console.log(x);
+          if(navigator.geolocation){
+              console.log(navigator.geolocation.getCurrentPosition(showlocation))
+          }
+        }
+
+        function showlocation (position){
+            console.log(x);
+          x.innerHTML = 'Location' + position.coords.longitude;
+        }
+    </script>
+</head>
+ <body>
+     <h2 id="loca"></h2>
+    <button onclick="myFunc()">Location</button>
+     
+    <!-- <div class="container">
+
+         <div class="search_area">
+             <input id="search" type="text" placeholder="Search by city Name">
+             <button id="search_btn">Search</button>
+         </div>
+         <div class="inner_weather_app">
+             <div class="left">
+                 <h2>Your Search</h2>
+                 <div class="condition">
+                     <img src="https://i.pinimg.com/736x/1e/1f/c8/1e1fc856de8bcfbbf4b0f1bd882f2f97.jpg" alt="">
+                 </div>
+                 <h3 class="city">Naogon,Bd</h3>
+                 <p class="conditon">Clear</p>
+                 <div class="w-details"></div>
+             </div>
+             <div class="right">
+
+             </div>
+         </div>
+     </div>-->
+</body> 
+
+</html>

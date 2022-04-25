@@ -1,0 +1,82 @@
+
+@import 'reset';
+@import 'variable';
+@import 'footer';
+
+@mixin fontZize($value) {
+    @if $value == small{
+        font-size: 10px;
+     }
+     @else if $value == medium {
+        font-size: 25px;
+     }
+     @else if $value == large {
+        font-size: 35px;
+     }
+     @else{
+         font-size: none;
+     }
+}
+
+
+
+nav{
+    ul{
+        list-style-type: none;
+        li{
+            display: inline-block;
+            margin: 0 20px;
+            a{
+              color: darkblue;
+              display: inline-block;
+              transition: 500ms;
+              padding: 3px 20px;
+              @include fontZize(small)
+            }
+            a:hover{
+                background-color: rgb(0, 0, 0);
+                border-radius: 5px;
+              color: white;
+             
+            }
+        }
+    }
+}
+
+$main-bgColor: #1ce402be;
+
+main{
+    background: $main-bgColor;
+}
+
+@mixin pera-color ($color, $background,$style) {
+    color: $color;
+    background: $background;
+    font-style: $style;
+    text-align: center;
+    padding: 10px 10px;
+}
+
+#about{
+ @include pera-color(#fafafabe, #2b18dbbe, italic) 
+}
+
+.download{
+    color: royalblue;
+    font-size: 20px;
+    border-radius: 5px;
+    border: none;
+
+}
+
+.btn{
+    @extend .download;
+    background: darkblue;
+    padding: 5px 20px;
+}
+
+.lean{
+    @extend .download;
+    background-color: green;
+    padding: 5px 10px;
+}
